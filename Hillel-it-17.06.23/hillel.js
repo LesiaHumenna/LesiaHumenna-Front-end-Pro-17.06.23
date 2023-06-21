@@ -55,6 +55,14 @@ let users = [
     },
 ];
 function listUsers() {
+    let usersPhone = users.map(function(user){
+    return user.phone;
+  })
+  console.log(usersPhone);
+  
+  const balances = users.reduce((acc, item) => acc + parseFloat(item.balance.replace("$", "").replace(",", "")), 0);;
+  console.log(balances);
+  
     const result = [];
         users.forEach(function(user) {
         const value = parseFloat(user.balance.replace("$", "").replace(",", ""));
